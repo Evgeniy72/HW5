@@ -9,6 +9,7 @@ public:
 	int get_sides_count() {
 		return sides_count;
 	}
+	virtual void print() {};
 	std::string get_name() {
 		return name;
 	}
@@ -19,7 +20,7 @@ public:
 };
 class Triangle : public Figure {
 public:
-	void print() {
+	void print() override {
 		std::cout << name << std::endl << "с углами " << a << ", " << b << ", " << c << "   и сторонами   " << A << ", " << B << ", " << C << std::endl;
 	}
 		Triangle() {
@@ -37,7 +38,7 @@ public:
 		name = "Четырехугольник";
 		a = 60; b = 120; c = 60; d = 120; A = 5; B = 6; C = 5; D = 6;
 		}
-		void print() {
+		void print() override{
 			std::cout << name << std::endl  << "  с углами " << a << ", " << b << ", " << c << ",  " << d << "   и сторонами   " << A << ", " << B << ", " << C << ", " << D <<  std::endl;
 			}
 };
@@ -90,12 +91,12 @@ public:
 		a = c = 60; b = d = 90; A = C = D = B = 6;
 	}
 };
-
+void print_info(Figure f) {f.print(); }
 int main(){
 	{
 		setlocale(LC_ALL, "Russian");}
 		Triangle one;
-		one.print();
+		print_info(one);
 		Quadrangle two;
 		two.print();
 		Triangle_pryam three;

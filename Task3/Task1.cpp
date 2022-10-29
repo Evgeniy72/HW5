@@ -3,10 +3,10 @@
 class Figure {
 protected:
 	int sides_count;
-	std::string name, corr;
+	std::string name;
 	int a, b, c, A, B, C;
 public:
-		int get_sides_count() {
+	int get_sides_count() {
 		return sides_count;
 	}
 	std::string get_name() {
@@ -15,17 +15,15 @@ public:
 	virtual std::string correct() {
 		if (sides_count == 0)
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
-	}; 
-	virtual void print(){
-		correct();
-		std::cout << name << std::endl << "Количество сторон   " << sides_count << std::endl << corr << std::endl;
+	};
+	virtual void print() {
+
+		std::cout << name << std::endl << "Количество сторон   " << sides_count << std::endl << correct() << std::endl;
 	}
 	Figure() {
 		sides_count = 0;
@@ -37,17 +35,14 @@ public:
 	std::string correct() override {
 		if ((sides_count == 3) and (a + b + c == 180))
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
-	void print() override{
-		correct();
-		std::cout << name << std::endl << "Количество сторон   " << sides_count << std::endl << corr << std::endl << "с углами " << a << ", " << b << ", " << c << "   и сторонами   " << A << ", " << B << ", " << C << std::endl;
+	void print() override {
+		std::cout << name << std::endl << "Количество сторон   " << sides_count << std::endl << correct() << std::endl << "с углами " << a << ", " << b << ", " << c << "   и сторонами   " << A << ", " << B << ", " << C << std::endl;
 	}
 	Triangle() {
 		sides_count = 3;
@@ -62,12 +57,10 @@ public:
 	std::string correct() override {
 		if ((sides_count == 4) and (a + b + c + d == 360))
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
 	Quadrangle() {
@@ -76,8 +69,7 @@ public:
 		a = 60; b = 120; c = 60; d = 120; A = 5; B = 6; C = 5; D = 6;
 	}
 	void print() override {
-		correct();
-		std::cout << name << std::endl << corr << std::endl << "с углами " << a << ", " << b << ", " << c << ",  " << d << "   и сторонами   " << A << ", " << B << ", " << C << ", " << D << std::endl;
+		std::cout << name << std::endl << correct() << std::endl << "с углами " << a << ", " << b << ", " << c << ",  " << d << "   и сторонами   " << A << ", " << B << ", " << C << ", " << D << std::endl;
 	}
 };
 class Triangle_pryam : public Triangle {
@@ -85,12 +77,10 @@ public:
 	std::string correct() override {
 		if (c == 90)
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
 	Triangle_pryam() {
@@ -103,12 +93,10 @@ public:
 	std::string correct() override {
 		if ((A == C) and (a == c))
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
 	Triangle_ravnobedr() {
@@ -121,12 +109,10 @@ public:
 	std::string correct() override {
 		if ((a == b == c == 60) and (A == B == C))
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
 	Triangle_ravnostoron() {
@@ -139,12 +125,10 @@ public:
 	std::string correct() override {
 		if ((sides_count == 4) and (a + b + c + d == 360))
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
 	Pryamougol() {
@@ -157,12 +141,10 @@ public:
 	std::string correct() override {
 		if ((a == b == c == d == 90) and (A == B == C == D))
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
 	Kvadrat() {
@@ -175,12 +157,10 @@ public:
 	std::string correct() override {
 		if ((a == c == b == d == 90) and (A == C) and (B == D))
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
 	Parallelogram() {
@@ -193,12 +173,10 @@ public:
 	std::string correct() override {
 		if ((a == c) and (b == d) and (A == B == C == D))
 		{
-			corr = "Правильная";
-			return corr;
+			return "Правильная";
 		}
 		else {
-			corr = "Неправильная";
-			return corr;
+			return "Неправильная";
 		}
 	}
 	Romb() {
@@ -234,10 +212,10 @@ int main() {
 	Quadrangle* kva = &seven;
 	kva->print();
 	Parallelogram eleven;
-    Quadrangle* parall = &eleven;
+	Quadrangle* parall = &eleven;
 	parall->print();
 	Romb eight;
-    Quadrangle* romb = &eight;
+	Quadrangle* romb = &eight;
 	romb->print();
 
 }
