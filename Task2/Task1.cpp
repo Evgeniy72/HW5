@@ -91,27 +91,27 @@ public:
 		a = c = 60; b = d = 90; A = C = D = B = 6;
 	}
 };
-void print_info(Figure f) {f.print(); }
+void print_info(Figure* f) {f->print(); }
 int main(){
 	{
 		setlocale(LC_ALL, "Russian");}
 		Triangle one;
-		print_info(one);
+		print_info(&one);
 		Quadrangle two;
-		two.print();
+		print_info(&two);
 		Triangle_pryam three;
-		three.print();
+		print_info(&three);
 		Triangle_ravnobedr four;
-		four.print();
+		print_info(&four);
 		Triangle_ravnostoron five;
-		five.print();
+		print_info(&five);
 		Pryamougol six;
-		six.print();
+		print_info(&six);
 		Kvadrat seven;
-		seven.print();
-		Parallelogram eleven;
-		eleven.print();
-		Romb eight;
-		eight.print();
+		print_info(&seven);
+		Parallelogram eight;
+		print_info(&eight);
+		Romb nine;
+		print_info(&nine);
 	
 }
